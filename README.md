@@ -1,10 +1,14 @@
-A Gurps 3.0 based character api study
+<h2>A Gurps 3.0 based character api study</h2>
 
+<p>
 The Generic Universal RolePlaying System, or GURPS, is a tabletop role-playing game system designed to allow for play in any game setting. It was created by Steve Jackson Games and first published in 1986 at a time when most such systems were story- or genre-specific.
-
+</p>
+<p>
 Players control their in-game characters verbally and the success of their actions are determined by the skill of their character, the difficulty of the action, and the rolling of dice. Characters earn points during play which are used to gain greater abilities. Gaming sessions are story-told and run by "Game Masters" (often referred to as simply "GMs").
-
+</p>
+<p>
 GURPS won the Origins Award for Best Roleplaying Rules of 1988, and in 2000 it was inducted into the Origins Hall of Fame. Many of its expansions have also won awards.
+</p>
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> 
@@ -15,12 +19,9 @@ GURPS won the Origins Award for Best Roleplaying Rules of 1988, and in 2000 it w
 
     []: # Módulo Básico: https://1drv.ms/b/s!AlWQNTQVM0lyhJo5B4BAXaDRDHBGQA
 
-[DOING]:Terminar de modelar;
-
-[TODO]:
-Consertar as anotations de relacionamentos;
-Ver se sobe;
-Escrever os requisitos funcionais em detalhes;
-Rever arquitetura;
-[DONE]: Desenhar a modelagem inicial;
+<p>[DOING] Criar serviços para raça e outras entidades necessárias</p>
+<p>
+[TODO]Escrever os requisitos funcionais em detalhes;
+[TODO]Rever arquitetura;
+</p>
 
