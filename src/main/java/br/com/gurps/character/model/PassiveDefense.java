@@ -9,8 +9,7 @@ import javax.persistence.*;
  * @author reinaldo_neves@hotmail.com
  */
 @Data
-@Entity(name = "passive_defense")
-@Table(name = "passive_defense")
+@Embeddable
 public class PassiveDefense {
 
     @Id
@@ -21,17 +20,17 @@ public class PassiveDefense {
     private int shield;
     @Column(name = "armor", nullable = false)
     private int armor;
-    @Column(name = "passive_defense_total", nullable = false)
-    private int passiveDefenseTotal;
+    @Column(name = "total", nullable = false)
+    private int total;
 
     @PrePersist
     protected void onCreate() {
-        passiveDefenseTotal = shield + armor;
+        total = shield + armor;
     }
 
     @PreUpdate
     public void preUpdate() {
-        passiveDefenseTotal = shield + armor;
+        total = shield + armor;
     }
 
 }

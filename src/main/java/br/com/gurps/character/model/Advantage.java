@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @Table(name = "advantage")
 @Data
 public class Advantage extends InnateAbilities{
+
     @Id
     @Column(name = "id", nullable = false)
     private Long id;

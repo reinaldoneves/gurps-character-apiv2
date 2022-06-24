@@ -37,7 +37,7 @@ public class CharacterEntity {
     @Column(name = "created_on", nullable = false)
     private LocalDate createdOn;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name="race_id", nullable = false,
             referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_race"))
     private Race race;
@@ -45,32 +45,26 @@ public class CharacterEntity {
     @Column(name = "appearance", nullable = false)
     private String appearance;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="damage_id", nullable = false,
-            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_damage"))
+    @Embedded
     private Damage damage;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="passive_defense_id", nullable = false,
-            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_passive_defense"))
+    @Embedded
     private PassiveDefense passiveDefense;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="active_defense_id", nullable = false,
-            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_active_defense"))
+    @Embedded
     private ActiveDefense activeDefense;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="damage_resistence_id", nullable = false,
-            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_damage_resistence"))
+    @Embedded
     private DamageResistance damageResistance;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="movement_id", nullable = false,
-            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_movement"))
+    @Embedded
     private Movement movement;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
+    /***
+     * TODO: watch nelson course and discover how to reference super classes in JPA
+     * https://www.youtube.com/watch?v=XszpXoII9Sg&ab_channel=DailyCodeBuffer
+     */
+    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
     private List<Expertise> expertises;
 
     @OneToMany(mappedBy = "id")
@@ -85,9 +79,7 @@ public class CharacterEntity {
     @OneToMany(mappedBy = "id")
     private List<Equipment> equipment;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="grimoire_id", nullable = true,
-            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_grimoire"))
+    @Embedded
     private Grimoire grimoire;
 
     @Column(name = "is_alive", nullable = false)
@@ -105,4 +97,5 @@ public class CharacterEntity {
         isAlive = true;
         isAwake = true;
     }
+
 }

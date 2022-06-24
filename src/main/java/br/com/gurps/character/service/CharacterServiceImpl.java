@@ -19,41 +19,35 @@ public class CharacterServiceImpl implements ICharacterService {
     @Override
     public CharacterEntity getCharacterById(Long id) {
         return repository.findById(id).orElse(null);
-//        throw new UnsupportedOperationException("You've reached getCharacterById(Long id) method @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public boolean isAlive(Long id) {
         return repository.existsById(id);
-//        throw new UnsupportedOperationException("You've reached isAlive() @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public List<CharacterEntity> getAllCharacters() {
         return repository.findAll();
-//        throw new UnsupportedOperationException("You've reached getAllCharacters() @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public List<CharacterEntity> getCharactersByPlayerId(Long id) {
         return repository.findAllByPlayerId(id);
-//        throw new UnsupportedOperationException("You've reached getPlayersCharacters(Long id) @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public CharacterEntity createCharacter(CharacterEntity characterEntity) {
         return repository.save(characterEntity);
-//        throw new UnsupportedOperationException("You've reached createCharacter(CharacterEntity characterEntity) @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public CharacterEntity updateCharacter(CharacterEntity characterEntity) {
         return repository.save(characterEntity);
-//        throw new UnsupportedOperationException("You've reached updateCharacter(CharacterEntity characterEntity) @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     /**Kill character is the same that update it and set isAlive to false.
-     *
+     * If the character's LP(life points) is lower than (HT*10)*-1, than he's dead!
      */
     @Override
     public void killCharacter(Long id) {

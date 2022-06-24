@@ -1,12 +1,8 @@
 package br.com.gurps.character.model;
 
-
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * The entity class for the <i>active_defense<i/>
@@ -15,13 +11,8 @@ import javax.persistence.Table;
  * @author reinaldo_neves@hotmail.com
  */
 @Data
-@Entity(name = "active_defense")
-@Table(name = "active_defense")
+@Embeddable
 public class ActiveDefense {
-
-    @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
 
     /**
      * Esquiva

@@ -1,13 +1,13 @@
 package br.com.gurps.character.service;
 
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
 /**
  * A generic service to be used in all services of our applications
- * todo: maybe we could use javax.persistence.Entity ?
+ * Todo: maybe we could use javax.persistence.Entity ?
+ * TODO: Test everything with the regular service, and then use the generic service
  * @param <Entity> the entity to be returned
  * @param <Repository> the entityRepository to be used
  * @param <Parameter> the parameter to be used by the get methods

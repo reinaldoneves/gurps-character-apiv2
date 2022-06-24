@@ -13,8 +13,7 @@ import java.util.List;
  * @author reinaldo_neves@hotmail.com
  */
 @Data
-@Entity(name = "grimoire")
-@Table(name = "grimoire")
+@Embeddable
 public class Grimoire {
 
     @Id
@@ -25,11 +24,10 @@ public class Grimoire {
     @ElementCollection
     @Column(name = "magic")
     @CollectionTable(name = "magic_list", joinColumns = @JoinColumn(name = "id"))
-    private List<Magic> magics = new ArrayList<>();
+    private List<Magic> magicList = new ArrayList<>();
 
 //    @Column(name = "magic_list", nullable = false)
 //    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
 //    List<Magic> magicList;
-
 
 }

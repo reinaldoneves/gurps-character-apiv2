@@ -2,10 +2,7 @@ package br.com.gurps.character.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /***
  * The entity class for the <i>damage<i/>
@@ -13,13 +10,8 @@ import javax.persistence.Table;
  * @author reinaldo_neves@hotmail.com
  */
 @Data
-@Entity(name = "damage")
-@Table(name = "damage")
+@Embeddable
 public class Damage {
-
-    @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
 
     @Column(name = "ball", nullable = false)
     private int ball;
