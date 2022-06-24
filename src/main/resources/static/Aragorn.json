@@ -1,0 +1,66 @@
+{
+  "id": 0,
+  "playerId": 0,
+  "name": "Estel",
+  "age": 27,
+  "history": "Filho de Arathorn, herdeiro do legado de Gondor e Arnor, Aragorn II nasceu no dia 1 de Março de 2931, na Terceira Era, filho de Arathorn II e Gilraen. Com apenas 2 anos, Aragorn perdeu o pai (que era capitão dos Dúnedain), quando este partiu com os filhos de Elrond para lutar contra os Orcs. Depois, a sua mãe levou-o em segredo para Valfenda (casa de Elrond), e lá Aragorn foi tratado como se fosse um filho. Seu nome e linhagem foram mantidos em segredo para sua proteção, uma vez que Sauron poderia persegui-lo caso soubesse do seu paradeiro (enquanto último herdeiro da Casa de Isildur, Aragorn representava esperança e era por isso chamado Estel). Foi em Valfenda que aprendeu muito sobre a cultura da Terra-Média e a língua élfica, bem como as suas habilidades enquanto caçador e combatente.",
+  "createdOn": {},
+  "race": {
+    "id": 0,
+    "cost": 0,
+    "name": "String",
+    "appearance": "String",
+    "page": 0,
+    "stModifier": 0,
+    "dxModifier": 0,
+    "iqModifier": 0,
+    "htModifier": 0
+  },
+  "appearance": "String",
+  "damage": {
+    "id": 0,
+    "ball": 0,
+    "gdp": 0,
+    "ballModificator": 0,
+    "gdpModificator": 0
+  },
+  "passiveDefense": {
+    "id": 0,
+    "shield": 0,
+    "armor": 0,
+    "passiveDefenseTotal": 0
+  },
+  "activeDefense": {
+    "id": 0,
+    "dodge": 0,
+    "trim": 0,
+    "block": 0
+  },
+  "damageResistance": {
+    "id": 0,
+    "head": 0,
+    "body": 0,
+    "arms": 0,
+    "legs": 0,
+    "hands": 0,
+    "foot": 0
+  },
+  "movement": {
+    "id": 0,
+    "basicSpeed": 0,
+    "tripMovement": 0,
+    "battleMovement": 0
+  },
+  "expertises": [],
+  "advantages": [],
+  "disadvantages": [],
+  "peculiarities": [],
+  "equipment": [],
+  "grimoire": {
+    "id": 0,
+    "magics": []
+  },
+  "isAlive": false,
+  "isAwake": false,
+  "gender": {}
+}

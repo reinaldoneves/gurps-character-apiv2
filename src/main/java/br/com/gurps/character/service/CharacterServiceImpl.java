@@ -36,7 +36,7 @@ public class CharacterServiceImpl implements ICharacterService {
 
     @Override
     public List<CharacterEntity> getCharactersByPlayerId(Long id) {
-        return repository.findAllByPalyerId(id);
+        return repository.findAllByPlayerId(id);
 //        throw new UnsupportedOperationException("You've reached getPlayersCharacters(Long id) @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 

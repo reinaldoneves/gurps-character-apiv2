@@ -21,6 +21,9 @@ public class CharacterEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="player_id", nullable = false)
+    private Long playerId;
+
     @Column(name = "name", nullable = false)
     private String name;
 

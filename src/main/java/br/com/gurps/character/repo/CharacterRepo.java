@@ -13,6 +13,6 @@ public interface CharacterRepo extends JpaRepository<CharacterEntity,Long> {
     void deleteCharacterById(Long id);
     Optional<CharacterEntity> findCharacterById(Long id);
     Optional<CharacterEntity> findCharacterByName(String name);
-    List<CharacterEntity> findAllByPalyerId(Long playerId);
+    List<CharacterEntity> findAllByPlayerId(Long playerId);
 
 }

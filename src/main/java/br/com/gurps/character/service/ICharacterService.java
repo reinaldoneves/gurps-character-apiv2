@@ -23,7 +23,7 @@ public interface ICharacterService {
 
     /***
      * Retrieve the {@link List<CharacterEntity>} of all characters of a given player
-     * @param id the id of the player
+     * @param playerId the id of the player
      * A NPC must belong to the player GM, and GM must have an id like any player
      */
     List<CharacterEntity> getCharactersByPlayerId(Long playerId);
