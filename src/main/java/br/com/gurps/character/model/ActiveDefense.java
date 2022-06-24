@@ -18,16 +18,16 @@ public class ActiveDefense {
      * Esquiva
      * */
     @Column(name = "dodge", nullable = false)
-    private int dodge;
+    private Long dodge;
     /**
      * Aparar
      * */
     @Column(name = "trim", nullable = false)
-    private int trim;
+    private Long trim;
     /**
      * Bloqueio
      * */
     @Column(name = "block", nullable = false)
-    private int block;
+    private Long block;
 
 }

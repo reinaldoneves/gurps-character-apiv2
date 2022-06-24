@@ -14,15 +14,15 @@ import javax.persistence.*;
 public class Damage {
 
     @Column(name = "ball", nullable = false)
-    private int ball;
+    private Long ball;
 
     @Column(name = "gdp", nullable = false)
-    private int gdp;
+    private Long gdp;
 
     @Column(name = "ball_modificator", nullable = false)
-    private int ballModificator;
+    private Long ballModificator;
 
     @Column(name = "gdp_modificator", nullable = false)
-    private int gdpModificator;
+    private Long gdpModificator;
 
 }

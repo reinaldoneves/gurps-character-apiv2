@@ -2,10 +2,8 @@ package br.com.gurps.character.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * The entity class for the <i>advantage<i/>
@@ -16,10 +14,14 @@ import javax.persistence.Table;
 @Entity(name = "advantage")
 @Table(name = "advantage")
 @Data
-public class Advantage extends InnateAbilities{
+public class Advantage implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
+    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
+    private Long characterId;
 
 }

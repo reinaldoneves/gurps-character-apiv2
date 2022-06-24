@@ -3,82 +3,68 @@
   "name": "Estel",
   "age": 27,
   "history": "Filho de Arathorn, herdeiro do legado de Gondor e Arnor, Aragorn II nasceu no dia 1 de Março de 2931, na Terceira Era, filho de Arathorn II e Gilraen. Com apenas 2 anos, Aragorn perdeu o pai (que era capitão dos Dúnedain), quando este partiu com os filhos de Elrond para lutar contra os Orcs. Depois, a sua mãe levou-o em segredo para Valfenda (casa de Elrond), e lá Aragorn foi tratado como se fosse um filho. Seu nome e linhagem foram mantidos em segredo para sua proteção, uma vez que Sauron poderia persegui-lo caso soubesse do seu paradeiro (enquanto último herdeiro da Casa de Isildur, Aragorn representava esperança e era por isso chamado Estel). Foi em Valfenda que aprendeu muito sobre a cultura da Terra-Média e a língua élfica, bem como as suas habilidades enquanto caçador e combatente.",
-  "createdOn": "2022-06-09T12:52:45-06:00",
+  "createdOn": 2931-03-01T12:52:45-06:00,
   "race": {
-    "id": 1,
     "cost": 0,
     "name": "Human",
-    "appearance": "A lost big monkey walking stand in his two legs. Slaves the other races and destroys the nature.",
-    "page": 0,
+    "appearance": "A lost big monkey walking stand in his two legs. Slaves the other races and destroys the nature in the name of something they called progress and honor.",
+    "page": 4,
     "stModifier": 0,
     "dxModifier": 0,
     "iqModifier": 0,
     "htModifier": 0
   },
   "appearance": "Long hair, tall and strong strider.",
-  "ball": 0,
-  "gdp": 0,
-  "ballModificator": 0,
-  "gdpModificator": 0,
-  // "damage": {
-  //   "id": 1,
-  //   "ball": 0,
-  //   "gdp": 0,
-  //   "ballModificator": 0,
-  //   "gdpModificator": 0
-  // },
-  // "passiveDefense": {
-  //   "id": 0,
-  //   "shield": 0,
-  //   "armor": 0,
-  //   "passiveDefenseTotal": 0
-  // },
-  "shieldPassiveDefense": 0,
-  "armorPassiveDefense": 0,
-  "passiveDefenseTotal": 0,
-  // "activeDefense": {
-  //   "id": 0,
-  //   "dodge": 0,
-  //   "trim": 0,
-  //   "block": 0
-  // },
-  "dodge": 0,
-  "trim": 0,
-  "block": 0,
-  // "damageResistance": {
-  //   "id": 0,
-  //   "head": 0,
-  //   "body": 0,
-  //   "arms": 0,
-  //   "legs": 0,
-  //   "hands": 0,
-  //   "foot": 0
-  // },
-  "headDamageResistance": 0,
-  "bodyDamageResistance": 0,
-  "armsDamageResistance": 0,
-  "legsDamageResistance": 0,
-  "handsDamageResistance": 0,
-  "footDamageResistance": 0,
-  // "movement": {
-  //   "id": 0,
-  //   "basicSpeed": 0,
-  //   "tripMovement": 0,
-  //   "battleMovement": 0
-  // },
-  "basicSpeed": 0,
-  "tripMovement": 0,
-  "battleMovement": 0,
+  "atributtes": {
+    "strength": 15,
+    "dexterity": 16,
+    "intelligence": 12,
+    "health": 12,
+    "lifePoints": 12,
+    "fatique": 15,
+    "will": 12,
+    "perception": 12
+  },
+  "damage": {
+    "ball": 1,
+    "gdp": 1,
+    "ballModificator": 3,
+    "gdpModificator": -2
+  },
+  "passiveDefense": {
+    "shield": 0,
+    "armor": 0,
+    "total": 0
+  },
+  "activeDefense": {
+    "dodge": 0,
+    "trim": 0,
+    "block": 0
+  },
+  "damageResistance": {
+    "skin": 0,
+    "head": 0,
+    "body": 0,
+    "arms": 0,
+    "hands": 0,
+    "legs": 0,
+    "foot": 0
+  },
+  "movement": {
+    "basicSpeed": 0,
+    "tripMovement": 0,
+    "battleMovement": 0
+  },
   "expertises": [],
   "advantages": [],
   "disadvantages": [],
   "peculiarities": [],
-  "equipment": [],
+  "equipmentList": [],
   "grimoire": {
     "id": 0,
-    "magics": []
+    "magicList": []
   },
-  "isAlive": "true",
-  "isAwake": "true",
+  "isAlive": false,
+  "isAwake": false,
   "gender": "MALE"
 }

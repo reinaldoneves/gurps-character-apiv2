@@ -4,7 +4,9 @@ import br.com.gurps.character.enums.Gender;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /***
@@ -14,11 +16,13 @@ import java.util.List;
 @Data
 @Entity(name = "character_entity")
 @Table(name = "character_entity")
-public class CharacterEntity {
+public class CharacterEntity implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name="player_id", nullable = false)
@@ -40,10 +44,14 @@ public class CharacterEntity {
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name="race_id", nullable = false,
             referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_race"))
+    @Transient
     private Race race;
 
     @Column(name = "appearance", nullable = false)
     private String appearance;
+
+    @Embedded
+    private Attributes atributtes;
 
     @Embedded
     private Damage damage;
@@ -65,19 +73,19 @@ public class CharacterEntity {
      * https://www.youtube.com/watch?v=XszpXoII9Sg&ab_channel=DailyCodeBuffer
      */
     @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
-    private List<Expertise> expertises;
+    private List<Expertise> expertises = new ArrayList<>();
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
     private List<Advantage> advantages;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
     private List<Disadvantage> disadvantages;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
     private List<Peculiarity> peculiarities;
 
-    @OneToMany(mappedBy = "id")
-    private List<Equipment> equipment;
+    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
+    private List<Item> equipmentList;
 
     @Embedded
     private Grimoire grimoire;
@@ -88,14 +96,29 @@ public class CharacterEntity {
     @Column(name = "is_awake", nullable = false)
     private boolean isAwake;
 
-    @Column(name = "gender", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    public Long getId() {
+        return id;
+    }
 
     @PrePersist
     protected void onCreate() {
         createdOn = LocalDate.now();
         isAlive = true;
         isAwake = true;
+
+        Long basicMovement = atributtes.getDexterity()+atributtes.getHealth()/4;
+        this.activeDefense.setDodge((long) basicMovement.intValue());
+        this.movement.setBattleMovement(basicMovement);
+        this.movement.setTripMovement(basicMovement);
+        this.movement.setBasicSpeed(basicMovement);
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        //TODO: calculate the dodge on update the list of the equipments
     }
 
 }

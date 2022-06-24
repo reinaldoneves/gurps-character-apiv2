@@ -12,10 +12,6 @@ import javax.persistence.*;
 @Embeddable
 public class PassiveDefense {
 
-    @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
-
     @Column(name = "shield", nullable = false)
     private int shield;
     @Column(name = "armor", nullable = false)

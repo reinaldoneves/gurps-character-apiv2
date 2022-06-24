@@ -2,10 +2,7 @@ package br.com.gurps.character.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * The entity class for the <i>attributes<i/>
@@ -14,13 +11,8 @@ import javax.persistence.Table;
  * @author reinaldo_neves@hotmail.com
  */
 @Data
-@Entity(name = "attributes")
-@Table(name = "attributes")
+@Embeddable
 public class Attributes {
-
-    @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
 
     @Column(name = "strength", nullable = false)
     private Long strength;

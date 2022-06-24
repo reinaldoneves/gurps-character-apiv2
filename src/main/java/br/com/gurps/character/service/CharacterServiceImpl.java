@@ -1,11 +1,15 @@
 package br.com.gurps.character.service;
 import br.com.gurps.character.model.CharacterEntity;
 import br.com.gurps.character.repo.CharacterRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
+@Slf4j
 @Service
 public class CharacterServiceImpl implements ICharacterService {
 
@@ -18,11 +22,14 @@ public class CharacterServiceImpl implements ICharacterService {
 
     @Override
     public CharacterEntity getCharacterById(Long id) {
+        log.info("Looking for character with id {}", id);
         return repository.findById(id).orElse(null);
     }
 
     @Override
     public boolean isAlive(Long id) {
+        log.info("Looking if character with id {} is alive", id);
+        //TODO: refactor this logic. The character must existsById and isAlive must be true
         return repository.existsById(id);
     }
 
@@ -32,17 +39,20 @@ public class CharacterServiceImpl implements ICharacterService {
     }
 
     @Override
-    public List<CharacterEntity> getCharactersByPlayerId(Long id) {
-        return repository.findAllByPlayerId(id);
+    public List<CharacterEntity> getCharactersByPlayerId(Long playerId) {
+        log.info("Looking for characters for the player with id {}", playerId);
+        return repository.findAllByPlayerId(playerId);
     }
 
     @Override
     public CharacterEntity createCharacter(CharacterEntity characterEntity) {
+        log.info("A new hero shall born today! And his/shes/it name is {}", characterEntity.getName());
         return repository.save(characterEntity);
     }
 
     @Override
     public CharacterEntity updateCharacter(CharacterEntity characterEntity) {
+        log.info("Updating character: {}", characterEntity.getName());
         return repository.save(characterEntity);
     }
 

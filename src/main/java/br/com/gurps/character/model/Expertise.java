@@ -3,10 +3,8 @@ package br.com.gurps.character.model;
 import br.com.gurps.character.enums.ExpertiseType;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /***
  * The entity class for the <i>expertise<i/>
@@ -18,12 +16,17 @@ import javax.persistence.Table;
 @Data
 @Entity(name = "expertise")
 @Table(name = "expertise")
-public class Expertise {
+public class Expertise implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-    @Column(name = "type", nullable = false)
+    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
+    private Long characterId;
+    @Column(name = "gender", nullable = false)
+    @Enumerated(EnumType.STRING)
     private ExpertiseType type;
     //ex. Modificador (DX+2)
     @Column(name = "modifier", nullable = false)

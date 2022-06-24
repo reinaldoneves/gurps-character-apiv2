@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /***
  * The entity class for the <i>magic<i/>
@@ -17,7 +18,9 @@ import javax.persistence.Table;
 @Data
 @Entity(name = "magic")
 @Table(name = "magic")
-public class Magic {
+public class Magic implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id", nullable = false)

@@ -2,10 +2,7 @@ package br.com.gurps.character.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /***
  * The entity class for the <i>peculiarity<i/>
@@ -20,5 +17,7 @@ public class Peculiarity extends InnateAbilities{
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
+    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
+    private Long characterId;
 
 }

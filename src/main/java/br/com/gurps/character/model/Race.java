@@ -3,6 +3,7 @@ package br.com.gurps.character.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /***
  * The entity class for the <i>race<i/> .
@@ -11,7 +12,9 @@ import javax.persistence.*;
 @Data
 @Entity(name = "race")
 @Table(name = "race")
-public class Race {
+public class Race implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   @Id
   @Column(name = "id", nullable = false)
