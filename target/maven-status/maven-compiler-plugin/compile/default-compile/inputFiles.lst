@@ -1,0 +1,7 @@
+/home/naldin/workspace-estudos/employeemanager/src/main/java/br/com/naldo/employeemanager/EmployeeResource.java
+/home/naldin/workspace-estudos/employeemanager/src/main/java/br/com/naldo/employeemanager/repo/EmployeeRepo.java
+/home/naldin/workspace-estudos/employeemanager/src/main/java/br/com/naldo/employeemanager/model/Employee.java
+/home/naldin/workspace-estudos/employeemanager/src/main/java/br/com/naldo/employeemanager/EmployeemanagerApplication.java
+/home/naldin/workspace-estudos/employeemanager/src/main/java/br/com/naldo/employeemanager/service/EmployeeService.java
+/home/naldin/workspace-estudos/employeemanager/src/main/java/br/com/naldo/employeemanager/exception/UserNotFoundException.java
+/home/naldin/workspace-estudos/employeemanager/src/main/java/br/com/naldo/employeemanager/config/CorsConfig.java
