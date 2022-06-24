@@ -26,7 +26,7 @@ public interface ICharacterService {
      * @param id the id of the player
      * A NPC must belong to the player GM, and GM must have an id like any player
      */
-    List<CharacterEntity> getPlayersCharacters(Long id);
+    List<CharacterEntity> getPlayersByCharacterId(Long id);
 
     /***
      * The born of the character
@@ -44,6 +44,7 @@ public interface ICharacterService {
      * Kill the character setting the isAlive to false
      * @param id
      */
+    @Deprecated
     void killCharacter(Long id);
 
     /***
