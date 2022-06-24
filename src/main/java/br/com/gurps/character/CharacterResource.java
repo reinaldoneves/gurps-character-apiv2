@@ -43,7 +43,7 @@ public class CharacterResource {
         return new ResponseEntity<>(updatedCharacter, HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/kill/{id}")
     public ResponseEntity<?> killCharacter(@PathVariable("id") Long id){
         service.killCharacter(id);
         return new ResponseEntity<>(HttpStatus.OK);

@@ -18,22 +18,26 @@ public class CharacterServiceImpl implements ICharacterService {
 
     @Override
     public CharacterEntity getCharacterById(Long id) {
-        throw new UnsupportedOperationException("You've reached getCharacterById(Long id) method @ CharacterServiceImpl.java Jack, but it is not supported yet.");
+        return repository.findById(id).orElse(null);
+//        throw new UnsupportedOperationException("You've reached getCharacterById(Long id) method @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public boolean isAlive(Long id) {
-        throw new UnsupportedOperationException("You've reached isAlive() @ CharacterServiceImpl.java Jack, but it is not supported yet.");
+        return repository.existsById(id);
+//        throw new UnsupportedOperationException("You've reached isAlive() @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public List<CharacterEntity> getAllCharacters() {
-        throw new UnsupportedOperationException("You've reached getAllCharacters() @ CharacterServiceImpl.java Jack, but it is not supported yet.");
+        return repository.findAll();
+//        throw new UnsupportedOperationException("You've reached getAllCharacters() @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
     public List<CharacterEntity> getPlayersCharacters(Long id) {
-        throw new UnsupportedOperationException("You've reached getPlayersCharacters(Long id) @ CharacterServiceImpl.java Jack, but it is not supported yet.");
+        return repository.findAllCharacterByPalyerId(id);
+//        throw new UnsupportedOperationException("You've reached getPlayersCharacters(Long id) @ CharacterServiceImpl.java Jack, but it is not supported yet.");
     }
 
     @Override
