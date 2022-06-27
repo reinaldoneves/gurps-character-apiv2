@@ -30,10 +30,18 @@ public class CharacterAppApplication {
 			//Create a race Dwarf
 			Race dwarf = new Race();
 			dwarf.setName("Dwarf");
-			dwarf.setAppearance("Short beardad men like frowning sulky creature." +
-					"\n No taller than a ten old regular kid.");
+			dwarf.setAppearance("Dwarves are a race of miners, met-\n" +
+					"alworkers, and craftsmen. They live underground, which is their workplace\n" +
+					"and protection from enemies. Dwarves are small but strong and enduring,\n" +
+					"with highly developed combat skills.\n" +
+					"They may become alchemists or specialize in enchanting, if they are magically gifted, but few dwarves practice\n" +
+					"other sorts of magic."+ "\nMany have Magic Resistance.\n" +
+					"Dwarves might be only 2/3 as tall as humans, but they are much longer-lived, with a nose for gold and a flair\n" +
+					"for all forms of craftsmanship.\n" +
+					"Dwarves often live in underground halls, and their eyes are adapted to dim\n" +
+					"light. Many dwarves have Miserliness, but this is not a racial trait.");
 			dwarf.setCost(30);
-			dwarf.setPage(40);
+			dwarf.setPage(107);
 			dwarf.setStModifier(2L);
 			dwarf.setHtModifier(2L);
 			dwarf.setIqModifier(-2L);
@@ -50,6 +58,8 @@ public class CharacterAppApplication {
 			elf.setStModifier(2L);
 			elf.setHtModifier(2L);
 			elf.setIqModifier(-2L);
+
+			raceRepository.save(elf);
 
 			//Create a character
 			CharacterEntity newChar = new CharacterEntity();
