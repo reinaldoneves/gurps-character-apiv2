@@ -32,6 +32,7 @@ public class CharacterAppApplication {
 
 			//Create a race Dwarf
 			Race dwarf = new Race();
+			dwarf.setId(1L);
 			dwarf.setName("Dwarf");
 			dwarf.setAppearance("Dwarves are a race of miners, met-\n" +
 					"alworkers, and craftsmen. They live underground, which is their workplace\n" +
@@ -47,6 +48,7 @@ public class CharacterAppApplication {
 			dwarf.setPage(107);
 			dwarf.setStModifier(2L);
 			dwarf.setHtModifier(2L);
+			dwarf.setDxModifier(0L);
 			dwarf.setIqModifier(-2L);
 			dwarf.setDamageResistanceModifier(2L);
 			dwarf.setMovementModifier(-1L);
@@ -55,6 +57,7 @@ public class CharacterAppApplication {
 
 			//Create a race Elf
 			Race elf = new Race();
+			dwarf.setId(2L);
 			elf.setName("Elf");
 			elf.setAppearance("Elves are slender, long-lived humanoids. Most Elves live in\n" +
 					"small tribes (20 to 100 members) apart from the lands of men.\n" +
@@ -73,9 +76,14 @@ public class CharacterAppApplication {
 
 			//Create a race Human
 			Race human = new Race();
-			elf.setName("Human");
-			elf.setAppearance("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ");
+			human.setId(3L);
+			human.setName("Human");
+			human.setAppearance("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ");
 			human.setCost(0);
+			elf.setStModifier(0L);
+			elf.setDxModifier(0L);
+			elf.setHtModifier(0L);
+			elf.setIqModifier(0L);
 			human.setPage(115);
 			human.setMovementModifier(-1L);
 
