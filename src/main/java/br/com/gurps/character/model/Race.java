@@ -45,4 +45,13 @@ public class Race implements Serializable {
   @Column(name = "ht_modifier")
   private Long htModifier;
 
+  @Column(name = "fatique_modifier")
+  private Long fatiqueModifier;
+
+  @Column(name = "damage_resistance_modifier")
+  private Long damageResistanceModifier;
+
+  @Column(name = "movement_modifier")
+  private Long movementModifier;
+
 }

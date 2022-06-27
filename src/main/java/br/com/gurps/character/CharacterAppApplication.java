@@ -45,19 +45,36 @@ public class CharacterAppApplication {
 			dwarf.setStModifier(2L);
 			dwarf.setHtModifier(2L);
 			dwarf.setIqModifier(-2L);
+			dwarf.setDamageResistanceModifier(2L);
+			dwarf.setMovementModifier(-1L);
 
 			raceRepository.save(dwarf);
 
 			//Create a race Elf
 			Race elf = new Race();
-			elf.setName("Dwarf");
-			elf.setAppearance("Short beardad men like frowning sulky creature." +
-					"\n No taller than a ten old regular kid.");
-			elf.setCost(30);
-			elf.setPage(40);
-			elf.setStModifier(2L);
+			elf.setName("Elf");
+			elf.setAppearance("Elves are slender, long-lived humanoids. Most Elves live in\n" +
+					"small tribes (20 to 100 members) apart from the lands of men.\n" +
+					"They multiply slowly; the teeming hordes of men and Orcs are a\n" +
+					"great threat to their existence. All Elves are of the same basic\n" +
+					"race, but tribal habits differ greatly.");
+			elf.setCost(40);
+			elf.setPage(120);
+			elf.setStModifier(-1L);
+			elf.setDxModifier(1L);
 			elf.setHtModifier(2L);
-			elf.setIqModifier(-2L);
+			elf.setIqModifier(1L);
+			elf.setMovementModifier(-1L);
+
+			raceRepository.save(elf);
+
+			//Create a race Elf
+			Race human = new Race();
+			elf.setName("Human");
+			elf.setAppearance("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ");
+			human.setCost(0);
+			human.setPage(115);
+			human.setMovementModifier(-1L);
 
 			raceRepository.save(elf);
 
