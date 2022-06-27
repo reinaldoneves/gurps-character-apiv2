@@ -1,6 +1,9 @@
 package br.com.gurps.character;
 
 import br.com.gurps.character.model.CharacterEntity;
+import br.com.gurps.character.model.Race;
+import br.com.gurps.character.repo.CharacterRepo;
+import br.com.gurps.character.repo.RaceRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,16 +24,39 @@ public class CharacterAppApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(
-//			StudentRepository studentRepository,
-//			StudentIdCardRepository studentIdCardRepository
-		) {
+	CommandLineRunner commandLineRunner(RaceRepo raceRepository, CharacterRepo characterRepository) {
 		return args -> {
-//			Faker faker = new Faker();
 
+			//Create a race Dwarf
+			Race dwarf = new Race();
+			dwarf.setName("Dwarf");
+			dwarf.setAppearance("Short beardad men like frowning sulky creature." +
+					"\n No taller than a ten old regular kid.");
+			dwarf.setCost(30);
+			dwarf.setPage(40);
+			dwarf.setStModifier(2L);
+			dwarf.setHtModifier(2L);
+			dwarf.setIqModifier(-2L);
+
+			raceRepository.save(dwarf);
+
+			//Create a race Elf
+			Race elf = new Race();
+			elf.setName("Dwarf");
+			elf.setAppearance("Short beardad men like frowning sulky creature." +
+					"\n No taller than a ten old regular kid.");
+			elf.setCost(30);
+			elf.setPage(40);
+			elf.setStModifier(2L);
+			elf.setHtModifier(2L);
+			elf.setIqModifier(-2L);
+
+			//Create a character
 			CharacterEntity newChar = new CharacterEntity();
+			newChar.setRace(elf);
 
-			//TODO: Fill the new character with his life and attributes and etc.
+
+
 //			String firstName = faker.name().firstName();
 //			String lastName = faker.name().lastName();
 //			String email = String.format("%s.%s@amigoscode.edu", firstName, lastName);

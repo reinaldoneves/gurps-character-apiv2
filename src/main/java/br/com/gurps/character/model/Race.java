@@ -23,26 +23,26 @@ public class Race implements Serializable {
   @Column(name = "cost", nullable = false)
   private int cost;
 
-  @Column(name = "name", nullable = false)
+  @Column(name = "name")
   private String name;
 
   @Lob
   @Column(name = "appearance", nullable = false)
   private String appearance;
 
-  @Column(name = "page", nullable = false)
+  @Column(name = "page")
   private int page;
 
-  @Column(name = "st_modifier", nullable = false)
+  @Column(name = "st_modifier")
   private Long stModifier;
 
-  @Column(name = "dx_modifier", nullable = false)
+  @Column(name = "dx_modifier")
   private Long dxModifier;
 
-  @Column(name = "iq_modifier", nullable = false)
+  @Column(name = "iq_modifier")
   private Long iqModifier;
 
-  @Column(name = "ht_modifier", nullable = false)
+  @Column(name = "ht_modifier")
   private Long htModifier;
 
 }

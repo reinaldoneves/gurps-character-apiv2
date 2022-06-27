@@ -1,6 +1,7 @@
 package br.com.gurps.character.model;
 
 import lombok.Data;
+import org.springframework.core.annotation.AliasFor;
 
 import javax.persistence.*;
 
@@ -26,16 +27,16 @@ public class Attributes {
     @Column(name = "health", nullable = false)
     private Long health;
 
-    @Column(name = "life_points", nullable = false)
+    @Column(name = "life_points")
     private Long lifePoints;
 
-    @Column(name = "fatique", nullable = false)
+    @Column(name = "fatique")
     private Long fatique;
 
-    @Column(name = "will", nullable = false)
+    @Column(name = "will")
     private Long will;
 
-    @Column(name = "perception", nullable = false)
+    @Column(name = "perception")
     private Long perception;
 
 }

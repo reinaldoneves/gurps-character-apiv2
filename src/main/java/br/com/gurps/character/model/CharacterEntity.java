@@ -110,10 +110,10 @@ public class CharacterEntity implements Serializable {
         isAwake = true;
 
         Long basicMovement = atributtes.getDexterity()+atributtes.getHealth()/4;
-        this.activeDefense.setDodge((long) basicMovement.intValue());
-        this.movement.setBattleMovement(basicMovement);
-        this.movement.setTripMovement(basicMovement);
-        this.movement.setBasicSpeed(basicMovement);
+        this.getActiveDefense().setDodge((long) basicMovement.intValue());
+        this.getMovement().setBattleMovement(basicMovement);
+        this.getMovement().setTripMovement(basicMovement);
+        this.getMovement().setBasicSpeed(basicMovement);
     }
 
     @PreUpdate
