@@ -17,17 +17,17 @@ public class ActiveDefense {
     /**
      * Esquiva
      * */
-    @Column(name = "dodge", nullable = false)
+    @Column(name = "dodge")
     private Long dodge;
     /**
      * Aparar
      * */
-    @Column(name = "trim", nullable = false)
+    @Column(name = "trim")
     private Long trim;
     /**
      * Bloqueio
      * */
-    @Column(name = "block", nullable = false)
+    @Column(name = "block")
     private Long block;
 
 }

@@ -1,9 +1,12 @@
 package br.com.gurps.character;
 
+import br.com.gurps.character.model.ActiveDefense;
+import br.com.gurps.character.model.Attributes;
 import br.com.gurps.character.model.CharacterEntity;
 import br.com.gurps.character.model.Race;
 import br.com.gurps.character.repo.CharacterRepo;
 import br.com.gurps.character.repo.RaceRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -68,7 +71,7 @@ public class CharacterAppApplication {
 
 			raceRepository.save(elf);
 
-			//Create a race Elf
+			//Create a race Human
 			Race human = new Race();
 			elf.setName("Human");
 			elf.setAppearance("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ");
@@ -78,37 +81,16 @@ public class CharacterAppApplication {
 
 			raceRepository.save(elf);
 
-			//Create a character
+			//Create the three basic characters
 			CharacterEntity newChar = new CharacterEntity();
-			newChar.setRace(elf);
+			newChar.setRace(human);
+			newChar.setAppearance("A tall beatiful men with browned eyes and long hair");
+			newChar.setAge(27);
+			newChar.setAtributtes(
+					new Attributes(12L,12L,10L,12L));
 
-
-
-//			String firstName = faker.name().firstName();
-//			String lastName = faker.name().lastName();
-//			String email = String.format("%s.%s@amigoscode.edu", firstName, lastName);
-
-//			Student student = new Student(
-//					firstName,
-//					lastName,
-//					email,
-//					faker.number().numberBetween(17, 55));
-//					email,
-//					faker.number().numberBetween(17, 55));
-
-//			studentRepository.save(student);
-
-//			studentRepository.findById(1L)
-//					.ifPresent(s -> {
-//						System.out.println("fetch book lazy...");
-//						List<Book> books = student.getBooks();
-//						books.forEach(book -> {
-//							System.out.println(
-//									s.getFirstName() + " borrowed " + book.getBookName());
-//						});
-//					});
+			characterRepository.save(newChar);
 
 		};
 	}
-
 }

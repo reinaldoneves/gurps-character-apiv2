@@ -1,7 +1,8 @@
 package br.com.gurps.character.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.core.annotation.AliasFor;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -12,8 +13,17 @@ import javax.persistence.*;
  * @author reinaldo_neves@hotmail.com
  */
 @Data
+@AllArgsConstructor
 @Embeddable
+@NoArgsConstructor
 public class Attributes {
+
+    public Attributes(Long strength, Long dexterity, Long intelligence, Long health) {
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.intelligence = intelligence;
+        this.health = health;
+    }
 
     @Column(name = "strength", nullable = false)
     private Long strength;
@@ -28,15 +38,15 @@ public class Attributes {
     private Long health;
 
     @Column(name = "life_points")
-    private Long lifePoints;
+    private Long lifePoints = health;
 
     @Column(name = "fatique")
-    private Long fatique;
+    private Long fatique = strength;
 
     @Column(name = "will")
-    private Long will;
+    private Long will = intelligence;
 
     @Column(name = "perception")
-    private Long perception;
+    private Long perception = intelligence;
 
 }

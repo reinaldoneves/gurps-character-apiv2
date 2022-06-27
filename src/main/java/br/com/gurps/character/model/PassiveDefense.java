@@ -12,11 +12,11 @@ import javax.persistence.*;
 @Embeddable
 public class PassiveDefense {
 
-    @Column(name = "shield", nullable = false)
+    @Column(name = "shield")
     private int shield;
-    @Column(name = "armor", nullable = false)
+    @Column(name = "armor")
     private int armor;
-    @Column(name = "total", nullable = false)
+    @Column(name = "total")
     private int total;
 
     @PrePersist
