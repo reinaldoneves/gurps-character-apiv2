@@ -95,11 +95,11 @@ public class CharacterEntity implements Serializable {
             name = "characters_itens_map",
             joinColumns = @JoinColumn(
                     name = "character_id",
-                    referencedColumnName = "characterId"
+                    referencedColumnName = "id"
             ),
             inverseJoinColumns = @JoinColumn(
                     name = "item_id",
-                    referencedColumnName = "itemId"
+                    referencedColumnName = "id"
             )
     )
     private List<Expertise> expertises = new ArrayList<>();
