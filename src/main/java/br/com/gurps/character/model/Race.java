@@ -1,26 +1,27 @@
 package br.com.gurps.character.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.boot.context.properties.bind.DefaultValue;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serial;
 import java.io.Serializable;
 
 /***
  * The entity class for the <i>race<i/> .
  * @author reinaldo_neves@hotmail.com
  */
-@Data
 @Entity(name = "race")
 @Table(name = "race")
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Race implements Serializable {
 
+  @Serial
   private static final long serialVersionUID = 1L;
-
-  public Race() {
-  }
 
   @Id
   @SequenceGenerator(
@@ -41,9 +42,11 @@ public class Race implements Serializable {
   @Column(name = "name")
   private String name;
 
-  @Lob
-  @Column(name = "appearance", nullable = false)
-  private String appearance;
+//  @Lob
+//  @Column(name = "description"), nullable = false)
+//  private String description;
+
+
 
   @Column(name = "page")
   private int page;
@@ -68,5 +71,9 @@ public class Race implements Serializable {
 
   @Column(name = "movement_modifier")
   private Long movementModifier;
+
+  @Lob
+  @Column(name = "description", nullable = false)
+  private String description;
 
 }

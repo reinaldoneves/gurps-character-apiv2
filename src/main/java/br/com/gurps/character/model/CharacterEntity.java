@@ -1,11 +1,10 @@
 package br.com.gurps.character.model;
 
 import br.com.gurps.character.enums.Gender;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,16 +14,16 @@ import java.util.List;
  * The entity class for the <i>character_entity<i/> .
  * @author reinaldo_neves@hotmail.com
  */
-@Data
+@Builder
 @Entity(name = "character_entity")
 @Table(name = "character_entity")
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class CharacterEntity implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
-
-    public CharacterEntity() {
-    }
 
     @Id
     @SequenceGenerator(
