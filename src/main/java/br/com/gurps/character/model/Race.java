@@ -42,11 +42,9 @@ public class Race implements Serializable {
   @Column(name = "name")
   private String name;
 
-//  @Lob
-//  @Column(name = "description"), nullable = false)
-//  private String description;
-
-
+  @Lob
+  @Column(name = "description", nullable = false)
+  private String description;
 
   @Column(name = "page")
   private int page;
@@ -72,8 +70,5 @@ public class Race implements Serializable {
   @Column(name = "movement_modifier")
   private Long movementModifier;
 
-  @Lob
-  @Column(name = "description", nullable = false)
-  private String description;
 
 }
