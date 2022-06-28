@@ -3,6 +3,7 @@ package br.com.gurps.character.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -16,12 +17,13 @@ import java.io.Serializable;
 @Data
 public class Advantage implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
-    private Long characterId;
+//    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
+//    private Long characterId;
 
 }

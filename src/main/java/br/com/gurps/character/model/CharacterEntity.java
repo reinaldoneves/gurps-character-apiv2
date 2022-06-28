@@ -7,7 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,13 +56,15 @@ public class CharacterEntity implements Serializable {
     @DateTimeFormat
     private LocalDateTime createdOn;
 
-//    @OneToOne(cascade = CascadeType.DETACH)
-//    @JoinColumn(name="race_id", nullable = false,
-//            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_race"))
-//    private Race race;
-
-    @OneToOne(cascade = CascadeType.DETACH, optional = false)
-    @JoinColumn(name = "race_id", nullable = false)
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "id",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false
+    )
     private Race race;
 
     @Column(name = "appearance", nullable = false)
@@ -87,23 +88,102 @@ public class CharacterEntity implements Serializable {
     @Embedded
     private Movement movement;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
+    @ManyToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinTable(
+            name = "characters_itens_map",
+            joinColumns = @JoinColumn(
+                    name = "character_id",
+                    referencedColumnName = "characterId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "item_id",
+                    referencedColumnName = "itemId"
+            )
+    )
     private List<Expertise> expertises = new ArrayList<>();
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
+
+    @ManyToMany(
+            cascade = CascadeType.DETACH
+    )
+    @JoinTable(
+            name = "characters_advantages_map",
+            joinColumns = @JoinColumn(
+                    name = "character_id",
+                    referencedColumnName = "id"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "advantage_id",
+                    referencedColumnName = "id"
+            )
+    )
     private List<Advantage> advantages;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
+    @ManyToMany(
+            cascade = CascadeType.DETACH
+    )
+    @JoinTable(
+            name = "characters_disadvantages_map",
+            joinColumns = @JoinColumn(
+                    name = "character_id",
+                    referencedColumnName = "id"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "disadvantage_id",
+                    referencedColumnName = "id"
+            )
+    )
     private List<Disadvantage> disadvantages;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
+    @ManyToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinTable(
+            name = "characters_peculiarities_map",
+            joinColumns = @JoinColumn(
+                    name = "character_id",
+                    referencedColumnName = "id"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "item_id",
+                    referencedColumnName = "id"
+            )
+    )
     private List<Peculiarity> peculiarities;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
-    private List<Item> equipmentList;
+    @ManyToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinTable(
+            name = "characters_itens_map",
+            joinColumns = @JoinColumn(
+                    name = "character_id",
+                    referencedColumnName = "id"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "item_id",
+                    referencedColumnName = "id"
+            )
+    )
+    private List<Item> itemList;
 
-    @Embedded
-    private Grimoire grimoire;
+    @ManyToMany(
+            cascade = CascadeType.DETACH
+    )
+    @JoinTable(
+            name = "characters_grimoire_map",
+            joinColumns = @JoinColumn(
+                    name = "character_id",
+                    referencedColumnName = "id"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "magic_id",
+                    referencedColumnName = "id"
+            )
+    )
+    List<Magic> grimoire = new ArrayList<Magic>();
 
     @Column(name = "is_alive", nullable = false)
     private boolean isAlive;
@@ -113,10 +193,6 @@ public class CharacterEntity implements Serializable {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
-    public Long getId() {
-        return id;
-    }
 
     @PrePersist
     protected void onCreate() {
