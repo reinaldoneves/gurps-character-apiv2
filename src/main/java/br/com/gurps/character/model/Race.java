@@ -14,12 +14,24 @@ import java.io.Serializable;
 @Data
 @Entity(name = "race")
 @Table(name = "race")
+@Builder
 public class Race implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
+  public Race() {
+  }
+
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @SequenceGenerator(
+          name = "character_sequence",
+          sequenceName = "character_sequence",
+          allocationSize = 1
+  )
+  @GeneratedValue(
+          strategy = GenerationType.SEQUENCE,
+          generator = "character_sequence"
+  )
   @Column(name = "id", nullable = false)
   private Long id;
 

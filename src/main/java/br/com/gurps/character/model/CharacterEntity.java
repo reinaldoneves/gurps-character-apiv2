@@ -1,7 +1,9 @@
 package br.com.gurps.character.model;
 
 import br.com.gurps.character.enums.Gender;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,12 +18,24 @@ import java.util.List;
 @Data
 @Entity(name = "character_entity")
 @Table(name = "character_entity")
+@Builder
 public class CharacterEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public CharacterEntity() {
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "character_sequence",
+            sequenceName = "character_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "character_sequence"
+    )
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -68,10 +82,6 @@ public class CharacterEntity implements Serializable {
     @Embedded
     private Movement movement;
 
-    /***
-     * TODO: watch nelson course and discover how to reference super classes in JPA
-     * https://www.youtube.com/watch?v=XszpXoII9Sg&ab_channel=DailyCodeBuffer
-     */
     @OneToMany(mappedBy = "id", cascade = CascadeType.DETACH)
     private List<Expertise> expertises = new ArrayList<>();
 

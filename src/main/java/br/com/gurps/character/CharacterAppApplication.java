@@ -32,9 +32,9 @@ public class CharacterAppApplication {
 
 			//Create a race Dwarf
 			Race dwarf = new Race();
-			dwarf.setId(1L);
-			dwarf.setName("Dwarf");
-			dwarf.setAppearance("Dwarves are a race of miners, met-\n" +
+			dwarf.builder().id(1L)
+					.name("Dwarf")
+					.appearance("Dwarves are a race of miners, met-\n" +
 					"alworkers, and craftsmen. They live underground, which is their workplace\n" +
 					"and protection from enemies. Dwarves are small but strong and enduring,\n" +
 					"with highly developed combat skills.\n" +
@@ -43,58 +43,60 @@ public class CharacterAppApplication {
 					"Dwarves might be only 2/3 as tall as humans, but they are much longer-lived, with a nose for gold and a flair\n" +
 					"for all forms of craftsmanship.\n" +
 					"Dwarves often live in underground halls, and their eyes are adapted to dim\n" +
-					"light. Many dwarves have Miserliness, but this is not a racial trait.");
-			dwarf.setCost(30);
-			dwarf.setPage(107);
-			dwarf.setStModifier(2L);
-			dwarf.setHtModifier(2L);
-			dwarf.setDxModifier(0L);
-			dwarf.setIqModifier(-2L);
-			dwarf.setDamageResistanceModifier(2L);
-			dwarf.setMovementModifier(-1L);
+					"light. Many dwarves have Miserliness, but this is not a racial trait.")
+					.cost(30)
+					.page(107)
+					.stModifier(2L)
+					.htModifier(2L)
+					.dxModifier(0L)
+					.iqModifier(-2L)
+					.damageResistanceModifier(2L)
+					.movementModifier(-1L);
 
 			raceRepository.save(dwarf);
 
 			//Create a race Elf
 			Race elf = new Race();
-			dwarf.setId(2L);
-			elf.setName("Elf");
-			elf.setAppearance("Elves are slender, long-lived humanoids. Most Elves live in\n" +
+			dwarf.builder()
+					.id(2L)
+					.name("Elf")
+					.appearance("Elves are slender, long-lived humanoids. Most Elves live in\n" +
 					"small tribes (20 to 100 members) apart from the lands of men.\n" +
 					"They multiply slowly; the teeming hordes of men and Orcs are a\n" +
 					"great threat to their existence. All Elves are of the same basic\n" +
-					"race, but tribal habits differ greatly.");
-			elf.setCost(40);
-			elf.setPage(120);
-			elf.setStModifier(-1L);
-			elf.setDxModifier(1L);
-			elf.setHtModifier(2L);
-			elf.setIqModifier(1L);
-			elf.setMovementModifier(-1L);
+					"race, but tribal habits differ greatly.")
+					.cost(40)
+					.page(120)
+					.stModifier(-1L)
+					.dxModifier(1L)
+					.htModifier(2L)
+					.iqModifier(1L)
+					.movementModifier(-1L);
 
 			raceRepository.save(elf);
 
 			//Create a race Human
 			Race human = new Race();
-			human.setId(3L);
-			human.setName("Human");
-			human.setAppearance("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ");
-			human.setCost(0);
-			elf.setStModifier(0L);
-			elf.setDxModifier(0L);
-			elf.setHtModifier(0L);
-			elf.setIqModifier(0L);
-			human.setPage(115);
-			human.setMovementModifier(-1L);
+			human.builder()
+					.id(3L)
+					.name("Human")
+					.appearance("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ")
+					.cost(0)
+					.stModifier(0L)
+					.dxModifier(0L)
+					.htModifier(0L)
+					.iqModifier(0L)
+					.page(115)
+					.movementModifier(-1L);
 
 			raceRepository.save(elf);
 
 			//Create the three basic characters
 			CharacterEntity newChar = new CharacterEntity();
-			newChar.setRace(human);
-			newChar.setAppearance("A tall beatiful men with browned eyes and long hair");
-			newChar.setAge(27);
-			newChar.setAtributtes(
+			newChar.builder().race(human)
+					.appearance("A tall beatiful men with browned eyes and long hair")
+					.age(27)
+					.atributtes(
 					new Attributes(12L,12L,10L,12L));
 
 			characterRepository.save(newChar);
