@@ -2,11 +2,13 @@ package br.com.gurps.character.model;
 
 import br.com.gurps.character.enums.Gender;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +53,9 @@ public class CharacterEntity implements Serializable {
     @Column(name = "history", nullable = false)
     private String history;
 
-    @Column(name = "created_on", nullable = false)
-    private LocalDate createdOn;
+    @Column(name = "created_on")
+    @DateTimeFormat
+    private LocalDateTime createdOn;
 
 //    @OneToOne(cascade = CascadeType.DETACH)
 //    @JoinColumn(name="race_id", nullable = false,
@@ -117,7 +120,7 @@ public class CharacterEntity implements Serializable {
 
     @PrePersist
     protected void onCreate() {
-        createdOn = LocalDate.now();
+        createdOn = LocalDateTime.now();
         isAlive = true;
         isAwake = true;
 
