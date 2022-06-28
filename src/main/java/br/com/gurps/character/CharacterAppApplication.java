@@ -34,7 +34,7 @@ public class CharacterAppApplication {
 			Race dwarf = new Race();
 			dwarf.builder().id(1L)
 					.name("Dwarf")
-					.appearance("Dwarves are a race of miners, met-\n" +
+					.description("Dwarves are a race of miners, met-\n" +
 					"alworkers, and craftsmen. They live underground, which is their workplace\n" +
 					"and protection from enemies. Dwarves are small but strong and enduring,\n" +
 					"with highly developed combat skills.\n" +
@@ -60,7 +60,7 @@ public class CharacterAppApplication {
 			dwarf.builder()
 					.id(2L)
 					.name("Elf")
-					.appearance("Elves are slender, long-lived humanoids. Most Elves live in\n" +
+					.description("Elves are slender, long-lived humanoids. Most Elves live in\n" +
 					"small tribes (20 to 100 members) apart from the lands of men.\n" +
 					"They multiply slowly; the teeming hordes of men and Orcs are a\n" +
 					"great threat to their existence. All Elves are of the same basic\n" +
@@ -80,7 +80,7 @@ public class CharacterAppApplication {
 			human.builder()
 					.id(3L)
 					.name("Human")
-					.appearance("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ")
+					.description("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ")
 					.cost(0)
 					.stModifier(0L)
 					.dxModifier(0L)
