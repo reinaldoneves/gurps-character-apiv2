@@ -54,10 +54,13 @@ public class CharacterEntity implements Serializable {
     @Column(name = "created_on", nullable = false)
     private LocalDate createdOn;
 
-    @OneToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name="race_id", nullable = false,
-            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_race"))
-    @Transient
+//    @OneToOne(cascade = CascadeType.DETACH)
+//    @JoinColumn(name="race_id", nullable = false,
+//            referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_race"))
+//    private Race race;
+
+    @OneToOne(cascade = CascadeType.DETACH, optional = false)
+    @JoinColumn(name = "race_id", nullable = false)
     private Race race;
 
     @Column(name = "appearance", nullable = false)

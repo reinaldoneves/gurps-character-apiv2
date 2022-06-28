@@ -32,7 +32,7 @@ public class CharacterAppApplication {
 
 			//Create a race Dwarf
 			Race dwarf = new Race();
-			dwarf.builder().id(1L)
+			dwarf.builder()
 					.name("Dwarf")
 					.description("Dwarves are a race of miners, met-\n" +
 					"alworkers, and craftsmen. They live underground, which is their workplace\n" +
@@ -58,7 +58,6 @@ public class CharacterAppApplication {
 			//Create a race Elf
 			Race elf = new Race();
 			dwarf.builder()
-					.id(2L)
 					.name("Elf")
 					.description("Elves are slender, long-lived humanoids. Most Elves live in\n" +
 					"small tribes (20 to 100 members) apart from the lands of men.\n" +
@@ -78,7 +77,6 @@ public class CharacterAppApplication {
 			//Create a race Human
 			Race human = new Race();
 			human.builder()
-					.id(3L)
 					.name("Human")
 					.description("A lost and fuzzy big monkey calling it self a political animal. Destroys the planet and slaves other creatures in the name of ''God'' ")
 					.cost(0)
@@ -89,7 +87,7 @@ public class CharacterAppApplication {
 					.page(115)
 					.movementModifier(-1L);
 
-			raceRepository.save(elf);
+			raceRepository.save(human);
 
 			//Create the three basic characters
 			CharacterEntity newChar = new CharacterEntity();
