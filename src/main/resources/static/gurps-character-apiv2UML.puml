@@ -1,0 +1,149 @@
+@startuml
+class br.com.gurps.character.model.Grimoire {
+- List<Magic> magicList
+}
+class br.com.gurps.character.model.Race {
+- {static} long serialVersionUID
+- Long id
+- int cost
+- String name
+- String description
+- int page
+- Long stModifier
+- Long dxModifier
+- Long iqModifier
+- Long htModifier
+- Long fatiqueModifier
+- Long damageResistanceModifier
+- Long movementModifier
+}
+class br.com.gurps.character.model.Peculiarity {
+- Long id
+- Long characterId
+}
+class br.com.gurps.character.model.Damage {
+- Long ball
+- Long gdp
+- Long ballModificator
+- Long gdpModificator
+}
+class br.com.gurps.character.model.DamageResistance {
+- int skin
+- int head
+- int body
+- int arms
+- int hands
+- int legs
+- int foot
+}
+class br.com.gurps.character.model.Magic {
+- {static} long serialVersionUID
+- Long id
+- String name
+- Long abilityLevel
+- String magicClass
+- String magicSchool
+- int operationTime
+- int duration
+- int energyCost
+- int page
+}
+class br.com.gurps.character.model.PassiveDefense {
+- int shield
+- int armor
+- int total
+# void onCreate()
++ void preUpdate()
+}
+abstract class br.com.gurps.character.model.InnateAbilities {
+- String name
+- int cost
+- String description
+- int page
+}
+class br.com.gurps.character.model.Disadvantage {
+- {static} long serialVersionUID
+- Long id
+- Long characterId
+}
+class br.com.gurps.character.model.Advantage {
+- {static} long serialVersionUID
+- Long id
+- Long characterId
+}
+class br.com.gurps.character.model.ActiveDefense {
+- Long dodge
+- Long trim
+- Long block
+}
+class br.com.gurps.character.model.CharacterEntity {
+- {static} long serialVersionUID
+- Long id
+- Long playerId
+- String name
+- int age
+- String history
+- LocalDate createdOn
+- Race race
+- String appearance
+- Attributes atributtes
+- Damage damage
+- PassiveDefense passiveDefense
+- ActiveDefense activeDefense
+- DamageResistance damageResistance
+- Movement movement
+- List<Expertise> expertises
+- List<Advantage> advantages
+- List<Disadvantage> disadvantages
+- List<Peculiarity> peculiarities
+- List<Item> equipmentList
+- Grimoire grimoire
+- boolean isAlive
+- boolean isAwake
+- Gender gender
++ Long getId()
+# void onCreate()
+# void onUpdate()
+}
+class br.com.gurps.character.model.Movement {
+- Long basicSpeed
+- Long tripMovement
+- Long battleMovement
+}
+class br.com.gurps.character.model.Attributes {
+- Long strength
+- Long dexterity
+- Long intelligence
+- Long health
+- Long lifePoints
+- Long fatique
+- Long will
+- Long perception
+}
+class br.com.gurps.character.model.Expertise {
+- {static} long serialVersionUID
+- Long id
+- Long characterId
+- ExpertiseType type
+- Long modifier
+- Long cost
+- int page
+- int abilityLevel
+}
+class br.com.gurps.character.model.Item {
+- {static} long serialVersionUID
+- Long id
+- Long characterId
+- String name
+- String description
+- Long passiveDefenseModifier
+- int damageResistance
+- Long price
+- Long weight
+}
+
+br.com.gurps.character.model.InnateAbilities <|-- br.com.gurps.character.model.Peculiarity
+br.com.gurps.character.model.InnateAbilities <|-- br.com.gurps.character.model.Disadvantage
+
+
+@enduml
