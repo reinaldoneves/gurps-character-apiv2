@@ -22,7 +22,5 @@ public class Disadvantage extends InnateAbilities implements Serializable {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
-    private Long characterId;
 
 }

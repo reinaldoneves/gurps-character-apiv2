@@ -23,9 +23,9 @@ public class Expertise implements Serializable {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
-    private Long characterId;
-    @Column(name = "gender", nullable = false)
+    @Column(name = "description", nullable = false)
+    private String description;
+    @Column(name = "type", nullable = false)
     @Enumerated(EnumType.STRING)
     private ExpertiseType type;
     //ex. Modificador (DX+2)

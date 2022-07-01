@@ -1,0 +1,28 @@
+
+gurps-character-api
+	O sistema consulta detalhes da raça na criação do personagem;
+	O jogador cadastra um personagem; 
+	O sistema calcula os modificadores da raça atrelados ao personagem;
+	O sistema calcula o dano básico do personagem;
+	O sistema calcula e altera as defesas ativas e passivas do personagem;
+	O jogador consulta uma lista de expertises (perícias);
+	O jogador consulta uma lista de advantages (vantagens);
+	O jogador consulta uma lista de disadvantages (desvantagens);
+	O jogador cadastra uma lista de peculiarities (peculiaridades);
+	O jogador consulta uma lista de equipment;
+	O jogador consulta uma equipment;
+	O jogador cria um personagem com 100 pontos;
+	O sistema calcula o dano do personagem ao ser criado;
+	
+gurps-battle-system-api
+	O personagem ataca outro personagem;
+		O personagem ataca com uma perícia de combate de perto;
+		O personagem ataca arremessando uma arma/objeto/magia;
+	Os personagens disputam uma habilidade;
+	O personagem se defende de um ataque;
+		O personagem se esquiva de um ataque;
+		O personagem apara um ataque;
+		O personagem bloqueia um ataque;
+	O personagem se movimenta;
+	O sistema calcula o dano total performado pelo personagem atacante;
+	O sistema performa o dano sofrido pelo personagem defensor;

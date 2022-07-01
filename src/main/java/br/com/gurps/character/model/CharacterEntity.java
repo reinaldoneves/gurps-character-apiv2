@@ -104,7 +104,6 @@ public class CharacterEntity implements Serializable {
     )
     private List<Expertise> expertises = new ArrayList<>();
 
-
     @ManyToMany(
             cascade = CascadeType.DETACH
     )

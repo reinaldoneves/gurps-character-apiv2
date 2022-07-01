@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Entity(name = "advantage")
 @Table(name = "advantage")
 @Data
-public class Advantage implements Serializable {
+public class Advantage extends InnateAbilities implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -23,7 +23,5 @@ public class Advantage implements Serializable {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-//    @ManyToOne(targetEntity =CharacterEntity.class, cascade = CascadeType.DETACH)
-//    private Long characterId;
 
 }
