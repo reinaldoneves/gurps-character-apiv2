@@ -64,6 +64,6 @@ public class CharacterServiceImpl implements ICharacterService {
 
     @Override
     public boolean isAwake(Long id) {
-        throw new UnsupportedOperationException("You've reached isAwake(Long id) @ CharacterServiceImpl.java Jack, but it is not supported yet.");
+        return getCharacterById(id).getAtributtes().getHealth() < 0;
     }
 }

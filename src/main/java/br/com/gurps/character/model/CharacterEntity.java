@@ -206,9 +206,4 @@ public class CharacterEntity implements Serializable {
         this.getMovement().setBasicSpeed(basicMovement);
     }
 
-    @PreUpdate
-    protected void onUpdate() {
-        //TODO: calculate the dodge on update the list of the equipments
-    }
-
 }

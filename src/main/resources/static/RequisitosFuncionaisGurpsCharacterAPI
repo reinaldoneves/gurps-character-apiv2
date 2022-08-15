@@ -1,7 +1,7 @@
 
 gurps-character-api
 	O sistema consulta detalhes da raça na criação do personagem;
-	O jogador cadastra um personagem; 
+	O jogador cadastra um personagem [DONE];
 	O sistema calcula os modificadores da raça atrelados ao personagem;
 	O sistema calcula o dano básico do personagem;
 	O sistema calcula e altera as defesas ativas e passivas do personagem;
