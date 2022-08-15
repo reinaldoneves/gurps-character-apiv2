@@ -3,7 +3,7 @@
   "name": "Estel",
   "age": 27,
   "history": "Filho de Arathorn, herdeiro do legado de Gondor e Arnor, Aragorn II nasceu no dia 1 de Março de 2931, na Terceira Era, filho de Arathorn II e Gilraen. Com apenas 2 anos, Aragorn perdeu o pai (que era capitão dos Dúnedain), quando este partiu com os filhos de Elrond para lutar contra os Orcs. Depois, a sua mãe levou-o em segredo para Valfenda (casa de Elrond), e lá Aragorn foi tratado como se fosse um filho. Seu nome e linhagem foram mantidos em segredo para sua proteção, uma vez que Sauron poderia persegui-lo caso soubesse do seu paradeiro (enquanto último herdeiro da Casa de Isildur, Aragorn representava esperança e era por isso chamado Estel). Foi em Valfenda que aprendeu muito sobre a cultura da Terra-Média e a língua élfica, bem como as suas habilidades enquanto caçador e combatente.",
-  "createdOn": "2931-03-01 12:34:17",
+  "createdOn": "2931-03-01T12:34:17",
   "race": {
     "id": 1,
     "cost": 0,
